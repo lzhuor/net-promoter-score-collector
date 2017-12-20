@@ -1,0 +1,35 @@
+com:
+    boylegu:
+        paginatio:
+            max-per-page: 7
+log4j:
+    appender:
+        didifile: org.apache.log4j.DailyRollingFileAppender
+        didifile.DatePattern: '''.''yyyy-MM-dd'
+        didifile.file: logs/gubaoer.log
+        errorfile: org.apache.log4j.DailyRollingFileAppender
+        errorfile.DatePattern: '''.''yyyy-MM-dd'
+        file: org.apache.log4j.DailyRollingFileAppender
+        file.DatePattern: '''.''yyyy-MM-dd'
+        file.file: logs/all.log
+        file.layout: org.apache.log4j.PatternLayout
+        file.layout.ConversionPattern: '%d{yyyy-MM-dd HH:mm:ss,SSS} %5p %c{1}:%L -
+            %m%n'
+        stdout: org.apache.log4j.ConsoleAppender
+        stdout.layout: org.apache.log4j.PatternLayout
+        stdout.layout.ConversionPattern: '%d{yyyy-MM-dd HH:mm:ss,SSS} %5p %c{1}:%L
+            - %m%n'
+    category:
+        com:
+            didispace: DEBUG, didifile
+    logger:
+        error: errorfile
+    rootCategory: INFO, stdout, file, errorfile
+server:
+    port: 8000
+spring:
+    data:
+        mongodb:
+            host: localhost
+            port: 27017
+            database: stashaway_survey_staging
