@@ -32,4 +32,4 @@ spring:
         mongodb:
             host: localhost
             port: 27017
-            database: stashaway_survey_staging
+            database: survey
