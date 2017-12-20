@@ -1,6 +1,6 @@
 # net-promoter-score-collector
 
-This is a NPS collector made by John to replicate the same feature built by Atlassain whom requires a commercial license and is expenseive. 
+This is a NPS collector made by John to replicate the same feature built by Zendesk whom requires a commercial license and is expenseive. 
 
 This project is built with Spring Boot Data JPA and Spring Boot Starter to serve static assets (survey site) and Object Mapping MongoDb objects. Front-end dashboard is still under development with Vue.js.
 
