@@ -1,4 +1,4 @@
-package com.stashaway.survey.config;
+package com.john.survey.config;
 
 import org.apache.log4j.Logger;
 import org.aspectj.lang.JoinPoint;

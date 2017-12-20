@@ -1,6 +1,6 @@
-package com.stashaway.survey.dao;
+package com.john.survey.dao;
 
-import com.stashaway.survey.entities.NpsQuestion;
+import com.john.survey.entities.NpsQuestion;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 

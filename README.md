@@ -15,9 +15,13 @@ With the power of Spring Boot starter, you can boost this app in a minuite by fo
 
 # Step 2
 create a Spring Boot application runner in your IDE:
+![Image of Swagger](http://www.zhuoran.li/assets/img/static/readme/nps-app-setup.png)
+
 
 # Step 3
 Run it!
+
+![Image of Swagger](http://www.zhuoran.li/assets/img/static/readme/nps-app-start.png)
 
 # Bonus Track!
 You can run the front-end dashboard by following
@@ -27,4 +31,6 @@ yarn install
 yarn run dev
 ```
 
+# Swagger
 API Documents are available via Swagger: http://localhost:8080/api/swagger
+![Image of Swagger](http://www.zhuoran.li/assets/img/static/readme/nps-swagger.png)

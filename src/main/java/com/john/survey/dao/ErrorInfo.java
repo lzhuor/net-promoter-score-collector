@@ -1,4 +1,4 @@
-package com.stashaway.survey.dao;
+package com.john.survey.dao;
 
 public class ErrorInfo<T> {
 

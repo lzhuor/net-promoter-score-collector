@@ -1,7 +1,7 @@
-package com.stashaway.survey.controller;
+package com.john.survey.controller;
 
-import com.stashaway.survey.dao.NpsQuestionRepository;
-import com.stashaway.survey.entities.NpsQuestion;
+import com.john.survey.dao.NpsQuestionRepository;
+import com.john.survey.entities.NpsQuestion;
 import io.swagger.annotations.ApiOperation;
 import org.eclipse.collections.impl.list.mutable.ListAdapter;
 import org.joda.time.DateTime;

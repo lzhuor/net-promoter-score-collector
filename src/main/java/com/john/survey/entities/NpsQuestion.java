@@ -1,4 +1,4 @@
-package com.stashaway.survey.entities;
+package com.john.survey.entities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.beans.factory.annotation.Required;

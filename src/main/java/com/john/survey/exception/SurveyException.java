@@ -1,4 +1,4 @@
-package com.stashaway.survey.exception;
+package com.john.survey.exception;
 
 public class SurveyException extends Exception {
 

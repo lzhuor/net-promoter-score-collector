@@ -1,6 +1,6 @@
-package com.stashaway.survey;
+package com.john.survey;
 
-import com.stashaway.survey.dao.PersonsRepository;
+import com.john.survey.dao.PersonsRepository;
 import com.stashaway.survey.entities.Persons;
 import org.junit.Test;
 import org.junit.runner.RunWith;

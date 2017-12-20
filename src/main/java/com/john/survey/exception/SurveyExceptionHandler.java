@@ -1,6 +1,6 @@
-package com.stashaway.survey.exception;
+package com.john.survey.exception;
 
-import com.stashaway.survey.dao.ErrorInfo;
+import com.john.survey.dao.ErrorInfo;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;

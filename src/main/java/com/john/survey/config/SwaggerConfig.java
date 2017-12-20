@@ -1,4 +1,4 @@
-package com.stashaway.survey.config;
+package com.john.survey.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
