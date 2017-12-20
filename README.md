@@ -17,4 +17,12 @@ create a Spring Boot application runner in your IDE:
 # Step 3
 Run it!
 
+# Bonus Track!
+You can run the front-end dashboard by following
+```
+cd frontend
+yarn install
+yarn run dev
+```
+
 API Documents are available via Swagger: http://localhost:8080/api/swagger
