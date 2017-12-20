@@ -3,7 +3,7 @@
         <div class="footer-main">
             <p class="footer-main-title">{{ message }}</p>
             <a href="https://github.com/lzhuor" target="_blank" class="footer-main-link">Github</a>
-            <a href="mailto:zhuoran666@gmail.com" class="footer-main-link">Email</a>
+            <a href="mailto:zhuoran666 at gmail.com" class="footer-main-link">Email</a>
         </div>
 
         <div class="layout-copy footdoc">
