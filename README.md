@@ -1,3 +1,5 @@
+THIS DOC IS WIP.
+
 # net-promoter-score-collector
 
 This is a NPS collector made by John to replicate the same feature built by Zendesk whom requires a commercial license and is expenseive. 
