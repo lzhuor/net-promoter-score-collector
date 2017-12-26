@@ -10,6 +10,10 @@ buildscript {
 	}
 }
 
+plugins {
+	id "com.ewerk.gradle.plugins.querydsl" version "1.0.9"
+}
+
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
@@ -26,13 +30,20 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-aop')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile("org.springframework.boot:spring-boot-starter-data-mongodb")
+	compile group: 'com.querydsl', name: 'querydsl-mongodb', version: '4.1.4'
 
-	compile('joda-time:joda-time')
-	compile('io.springfox:springfox-swagger2')
-	compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.7.0'
-	compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.7.0'
+	compile 'com.github.rutledgepaulv:rest-query-engine:0.7.1'
 	compile 'org.eclipse.collections:eclipse-collections-api:9.0.0'
 	compile 'org.eclipse.collections:eclipse-collections:9.0.0'
+	compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.7.0'
+	compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.7.0'
+	compile('io.springfox:springfox-swagger2')
+	compile('joda-time:joda-time')
 
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+querydsl {
+	springDataMongo = true
+	querydslSourcesDir = 'src/main/java'
 }
