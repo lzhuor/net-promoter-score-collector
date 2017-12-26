@@ -5,6 +5,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import java.util.Date;
 
 @Document(collection = "nps_question")
@@ -13,7 +15,9 @@ public class NpsQuestion {
     @Id
     private String id;
 
-    private String answer;
+    @Min(1)
+    @Max(10)
+    private Integer answer;
 
     @Indexed
     private String customerReference;
@@ -24,7 +28,7 @@ public class NpsQuestion {
     private Date createdAt;
 
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
-    private Date updatedAt;
+    private Date answeredAt;
 
     public NpsQuestion() {
 
@@ -33,7 +37,6 @@ public class NpsQuestion {
     public NpsQuestion(String customerReference) {
         this.customerReference = customerReference;
         this.isAnswered = false;
-        this.updatedAt = new Date();
         this.createdAt = new Date();
     }
 
@@ -45,11 +48,11 @@ public class NpsQuestion {
         this.id = id;
     }
 
-    public String getAnswer() {
+    public Integer getAnswer() {
         return answer;
     }
 
-    public void setAnswer(String answer) {
+    public void setAnswer(Integer answer) {
         this.answer = answer;
     }
 
@@ -66,7 +69,8 @@ public class NpsQuestion {
     }
 
     public void setAnswered(boolean answered) {
-        isAnswered = answered;
+        this.isAnswered = answered;
+        this.answeredAt = new Date();
     }
 
     public Date getCreatedAt() {
@@ -77,12 +81,12 @@ public class NpsQuestion {
         this.createdAt = createdAt;
     }
 
-    public Date getUpdatedAt() {
-        return updatedAt;
+    public Date getAnsweredAt() {
+        return answeredAt;
     }
 
-    public void setUpdatedAt(Date updatedAt) {
-        this.updatedAt = updatedAt;
+    public void setAnsweredAt(Date answeredAt) {
+        this.answeredAt = answeredAt;
     }
 
     @Override
