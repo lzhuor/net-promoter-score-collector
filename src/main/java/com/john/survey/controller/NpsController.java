@@ -2,15 +2,10 @@ package com.john.survey.controller;
 
 import com.john.survey.dao.NpsQuestionRepository;
 import com.john.survey.entities.NpsQuestion;
-import com.querydsl.core.types.Predicate;
 import io.swagger.annotations.ApiOperation;
 import org.eclipse.collections.impl.list.mutable.ListAdapter;
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.querydsl.binding.QuerydslPredicate;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -27,18 +22,9 @@ public class NpsController {
     @Autowired
     private NpsQuestionRepository npsQuestionRepository;
 
-    @RequestMapping(method = RequestMethod.GET)
-    public Page<NpsQuestion> index(
-            @QuerydslPredicate(root = NpsQuestion.class) Predicate predicate,
-            @PageableDefault(sort = { "answeredAt" }) Pageable pageable) {
-
-        return npsQuestionRepository.findAll(predicate, pageable);
-    }
-
     @ApiOperation(value = "Get all NPS questions")
-    @RequestMapping(value = "/last", params = "customerReference", method = RequestMethod.GET, produces = APPLICATION_JSON_VALUE)
-    public ResponseEntity<NpsQuestion> getLastUnAnsweredNpsQuestion(@RequestParam(value = "customerReference", required = false) String customerReference) {
-
+    @RequestMapping(value = "/latest", params = "customerReference", method = RequestMethod.GET, produces = APPLICATION_JSON_VALUE)
+    public ResponseEntity<NpsQuestion> getLastUnAnsweredNpsQuestion(@RequestParam(value = "customerReference", required = true) String customerReference) {
         NpsQuestion latestQuestion = npsQuestionRepository.findTopByCustomerReferenceOrderByAnsweredAtDesc(customerReference);
 
         if (latestQuestion == null) {
@@ -88,13 +74,15 @@ public class NpsController {
             @PathVariable String id,
             @RequestBody NpsQuestion data) {
 
-        NpsQuestion NpsQuestion = npsQuestionRepository.findOne(id);
+        NpsQuestion npsQuestion = npsQuestionRepository.findOne(id);
 
-        if (NpsQuestion.isAnswered()) return new ResponseEntity<>(NpsQuestion, HttpStatus.CONFLICT);
+        if (npsQuestion.isAnswered()) return new ResponseEntity<>(npsQuestion, HttpStatus.CONFLICT);
 
-        NpsQuestion.setAnswer(data.getAnswer());
-        NpsQuestion.setAnswered(true);
+        npsQuestion.setAnswer(data.getAnswer());
+        npsQuestion.setAnswered(true);
+        npsQuestion.setAnsweredAt(new Date());
 
-        return new ResponseEntity<>(npsQuestionRepository.save(NpsQuestion), HttpStatus.OK);
+
+        return new ResponseEntity<>(npsQuestionRepository.save(npsQuestion), HttpStatus.OK);
     }
 }

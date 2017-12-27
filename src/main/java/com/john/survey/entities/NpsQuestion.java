@@ -1,9 +1,11 @@
 package com.john.survey.entities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
@@ -22,12 +24,13 @@ public class NpsQuestion {
     @Indexed
     private String customerReference;
 
+    @JsonProperty("isAnswered")
     private boolean isAnswered;
 
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern="yyyy-MM-dd'T'HH:mm:ss.SSSZ")
     private Date createdAt;
 
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern="yyyy-MM-dd'T'HH:mm:ss.SSSZ")
     private Date answeredAt;
 
     public NpsQuestion() {
@@ -70,7 +73,6 @@ public class NpsQuestion {
 
     public void setAnswered(boolean answered) {
         this.isAnswered = answered;
-        this.answeredAt = new Date();
     }
 
     public Date getCreatedAt() {
