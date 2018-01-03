@@ -3,6 +3,8 @@ package com.john.survey.controller;
 import com.john.survey.dao.NpsQuestionRepository;
 import com.john.survey.entities.NpsQuestion;
 import io.swagger.annotations.ApiOperation;
+import org.eclipse.collections.api.list.MutableList;
+import org.eclipse.collections.impl.list.mutable.FastList;
 import org.eclipse.collections.impl.list.mutable.ListAdapter;
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
@@ -34,13 +37,24 @@ public class NpsController {
         }
     }
 
-    @ApiOperation(value = "Create new NPS question")
+    @ApiOperation(value = "Create a new NPS question")
     @RequestMapping(method = RequestMethod.POST, produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<NpsQuestion> createNpsQuestion(@RequestBody NpsQuestion npsQuestion) {
 
         String customerReference = npsQuestion.getCustomerReference();
         return new ResponseEntity<>(
                 npsQuestionRepository.insert(new NpsQuestion(customerReference)),
+                HttpStatus.OK);
+    }
+
+    @ApiOperation(value = "Batch create new NPS questions")
+    @RequestMapping(method = RequestMethod.POST, produces = APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<NpsQuestion>> createNpsQuestion(@RequestBody List<String> customerReferences) {
+        MutableList<NpsQuestion> npsQuestions = new FastList<>();
+        customerReferences.forEach(customerReference -> npsQuestions.add(npsQuestionRepository.insert(new NpsQuestion(customerReference))));
+
+        return new ResponseEntity<>(
+                npsQuestions,
                 HttpStatus.OK);
     }
 
@@ -57,7 +71,7 @@ public class NpsController {
                 .toSet();
     }
 
-    @ApiOperation(value = "Get NPS question by id")
+    @ApiOperation(value = "Get NPS question by nps question id")
     @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<NpsQuestion> getNpsResponseById(@PathVariable String id) {
 

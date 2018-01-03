@@ -2,9 +2,9 @@ THIS DOC IS WIP.
 
 # net-promoter-score-collector
 
-This is a [NPS](https://www.medallia.com/net-promoter-score/) collector made by John to replicate the same feature built by [Zendesk](https://support.zendesk.com/hc/en-us/articles/203755166-Creating-and-sending-a-Net-Promoter-Score-survey-to-measure-customer-loyalty) whom requires a commercial license and is expenseive. 
+This is a [NPS](https://www.medallia.com/net-promoter-score/) collector.
 
-This project is built with [Spring Boot Data JPA](https://spring.io/guides/gs/accessing-data-mongodb/) and Spring Boot Starter to serve static assets (survey site) and Object Mapping MongoDb objects. Front-end dashboard is still under development with Vue.js.
+This project is built with [Spring Data](https://spring.io/guides/gs/accessing-data-mongodb/) and Spring Boot to serve static assets (survey site) and Object Mapping MongoDb objects.
 
 With the power of Spring Boot starter, you can boost this app in a minute by following:
 
@@ -23,13 +23,8 @@ Run it!
 
 ![Image of Swagger](http://www.zhuoran.li/assets/img/static/readme/nps-app-start.png)
 
-# Bonus Track!
-You can run the front-end dashboard by following
-```
-cd frontend
-yarn install
-yarn run dev
-```
+# Build Front-end
+WIP
 
 # Swagger
 API Documents are available via Swagger: http://localhost:8000/swagger-ui.html
