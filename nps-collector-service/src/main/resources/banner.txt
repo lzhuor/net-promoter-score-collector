@@ -1,0 +1,3 @@
+${AnsiColor.BRIGHT_CYAN}John is the best
+${AnsiColor.BRIGHT_RED}Spring Boot Version : ${spring-boot.version} ${spring-boot.formatted-version}
+${AnsiColor.BRIGHT_BLACK}Author              : GitHub@lzhuor

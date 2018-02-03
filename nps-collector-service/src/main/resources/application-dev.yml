@@ -1,0 +1,10 @@
+spring:
+  profiles:
+    active: "dev"
+  data:
+    mongodb:
+      database: nps_collection
+      port: 27019
+slack:
+  npsWebHookUrl: ${SLACK_NPS_URL}
+

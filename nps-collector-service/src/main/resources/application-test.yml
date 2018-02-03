@@ -1,0 +1,12 @@
+spring:
+  profiles:
+    active: "test"
+  data:
+    mongodb:
+      host: localhost
+      database: nps_collection_test
+appServer:
+  baseUrl: "http://test-base-url"
+  emailBatchSize: 1
+slack:
+  npsWebHookUrl: "http://nps-webhook-url"
