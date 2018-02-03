@@ -1,10 +1,8 @@
-THIS DOC IS WIP.
-
 # net-promoter-score-collector
 
 This is a [NPS](https://www.medallia.com/net-promoter-score/) collector.
 
-This project is built with [Spring Data](https://spring.io/guides/gs/accessing-data-mongodb/) and Spring Boot to serve static assets (survey site) and Object Mapping MongoDb objects.
+This project is built with [Spring Data](https://spring.io/guides/gs/accessing-data-mongodb/) and Spring Boot. Backed by MongoDB as storage. It's also my first try out with [Vue](https://vuejs.org/) + [Vuex](https://vuex.vuejs.org/en/intro.html).
 
 With the power of Spring Boot starter, you can boost this app in a minute by following:
 
