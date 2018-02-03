@@ -23,8 +23,12 @@ Run it!
 
 ![Image of Swagger](http://www.zhuoran.li/assets/img/static/readme/nps-app-start.png)
 
-# Build Front-end
-WIP
+# Develop Front-end
+You can run 
+```
+cd nps-collector-web
+yarn dev
+```
 
 # Swagger
 API Documents are available via Swagger: http://localhost:8000/swagger-ui.html
