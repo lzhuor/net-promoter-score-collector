@@ -4,11 +4,11 @@
             <p class="title">Hi, {{ firstName }}</p>
         </b-row>
         <b-row>
-            <p>How you feel about your investing experience is very important to us. It's actually what we care about most! We'd appreciate a minute or two of your time for you to share what you really think of investing with StashAway.</p>
+            <p>How you feel about your experience is very important to us. It's actually what we care about most! We'd appreciate a minute or two of your time for you to share what you really think of our service.</p>
         </b-row>
 
         <b-row>
-            <p class="title">How likely are you to recommend StashAway to a friend?</p>
+            <p class="title">How likely are you to recommend us to a friend?</p>
         </b-row>
 
         <b-row>

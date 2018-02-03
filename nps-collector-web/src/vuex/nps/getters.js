@@ -24,7 +24,7 @@ export const npsFeedbackFormContentGetter = (state) => {
     if (state.npsSurvey.score >= 9) {
         return {
             message: 'Cool!',
-            description: 'We\'re glad to hear you\'re happy with your experience with StashAway so far! We\'d love to hear what you like as well as points of potential improvement.',
+            description: 'We\'re glad to hear you\'re happy with your experience with us so far! We\'d love to hear what you like as well as points of potential improvement.',
             question: 'Is there anything you really like, a feature you want, or a possible area of improvement?',
         }
     }

@@ -12,7 +12,7 @@ export default new Router({
     routes: [
         {
             path: '/',
-            name: 'Welcome, StashAway!',
+            name: 'Welcome!',
             component: SaWelcomePage
         },
         {
