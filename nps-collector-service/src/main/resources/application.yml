@@ -1,0 +1,27 @@
+server:
+  port: 8000
+
+# Spring Boot Actuator Endpoints Switch
+endpoints:
+  health:
+    enabled: true
+  heapdump:
+    enabled: false
+  docs:
+    enabled: false
+  auditevents:
+    enabled: false
+  loggers:
+    enabled: false
+  metrics:
+    enabled: false
+  env:
+    enabled: false
+  liquibase:
+    enabled: false
+  actuator:
+    enabled: false
+  autoconfig:
+    enabled: false
+  flyway:
+    enabled: false

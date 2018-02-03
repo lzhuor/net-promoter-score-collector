@@ -1,0 +1,26 @@
+plugins {
+    id "com.moowork.node" version "1.2.0"
+}
+
+task test(type: YarnTask) {
+    args = ['test']
+
+    dependsOn(yarn_install)
+}
+
+task buildWebApp(type: YarnTask) {
+    args = ['build']
+
+    dependsOn(test)
+}
+
+task copyAssets(type: Copy) {
+    from 'dist'
+    into '../nps-collector-service/src/main/resources/static/'
+
+    dependsOn(buildWebApp)
+}
+
+task buildCompleted(dependsOn: [yarn_install, test, buildWebApp, copyAssets]) {
+    println("nps-collector-web:build is completed")
+}
