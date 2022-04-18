@@ -13,7 +13,7 @@
     "build": "node buildconfig/build.js"
   },
   "dependencies": {
-    "axios": "^0.17.1",
+    "axios": "^0.21.2",
     "bootstrap": "4.0.0-beta.2",
     "bootstrap-vue": "^1.4.0",
     "http-status": "^1.0.1",
